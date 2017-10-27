@@ -19,8 +19,6 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-import static java.lang.String.format;
-
 public class CategorySyncer {
     private static final Logger LOGGER = LoggerFactory.getLogger(CategorySyncer.class);
 

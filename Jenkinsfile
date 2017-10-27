@@ -7,11 +7,15 @@ node {
         checkout scm
     }
 
-    stage('Build image') {
+    stage('Build the JAR') {
+        ./gradlew clean build
+    }
+
+    stage('Build the docker image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        dockerImage = docker.build("heshamm/sync-job")
+        dockerImage = docker.build("heshamm/sync-prototype-job")
     }
 
     stage('Test image') {
