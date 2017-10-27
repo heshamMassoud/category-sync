@@ -8,7 +8,7 @@ node {
     }
 
     stage('Build the JAR') {
-        ./gradlew clean build
+        gradle clean build
     }
 
     stage('Build the docker image') {
