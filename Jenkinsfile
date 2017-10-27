@@ -7,9 +7,9 @@ node {
         checkout scm
     }
 
-    stage('Build the JAR') {
-        /* ./gradle clean build */
-    }
+    /* stage('Build the JAR') {
+         ./gradle clean build
+    }*/
 
     stage('Build the docker image') {
         /* This builds the actual image; synonymous to
