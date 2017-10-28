@@ -19,14 +19,7 @@ node {
         dockerImage = docker.build("heshamm/category-sync")
     }
 
-    stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
-
-        dockerImage.inside {
-            sh 'echo "Tests passed"'
-        }
-
-        echo 'Hello World'
+    stage('Run the docker image') {
+        sh "docker run heshamm/category-sync"
     }
 }
