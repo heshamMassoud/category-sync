@@ -2,19 +2,14 @@ node {
     def dockerImage
 
     stage('Clone repository') {
-        /* Let's make sure we have the repository cloned to our workspace */
-
         checkout scm
     }
 
-    /* stage('Build the JAR') {
-         ./gradle clean build
-    }*/
+    stage('Build the JAR') {
+         ./gradlew clean build
+    }
 
     stage('Build the docker image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-
         dockerImage = docker.build("heshamm/category-sync")
     }
 
@@ -25,7 +20,23 @@ node {
         dockerImage.inside {
             sh 'echo "Tests passed"'
         }
+
+        pipeline {
+            agent any
+            triggers {
+                cron('H 4/* 0 0 1-5')
+            }
+            stages {
+                stage('Schedule the job') {
+                    steps {
+                        echo 'Hello World'
+                    }
+                }
+            }
+        }
     }
+
+    /*
 
     stage('Publish docker image to docker registry') {
         /* Finally, we'll push the image with two tags:
@@ -58,5 +69,5 @@ node {
                         break
                   }
         }
-    }
+    }*/
 }
