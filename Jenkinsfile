@@ -15,7 +15,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        dockerImage = docker.build("heshamm/sync-prototype-job")
+        dockerImage = docker.build("heshamm/category-sync")
     }
 
     stage('Test image') {

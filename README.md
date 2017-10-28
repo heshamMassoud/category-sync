@@ -1,4 +1,4 @@
-# jenkins-job-protoype
+# category-sync
 <!-- TODO [![Build Status]()
 [![codecov]()-->
 
