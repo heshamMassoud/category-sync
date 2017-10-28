@@ -1,3 +1,9 @@
+properties([
+    pipelineTriggers([
+        // this is a timer trigger you may adjust the cron expression to your needs
+        cron('* * * * *')
+    ])
+])
 node {
     def dockerImage
 
@@ -21,18 +27,6 @@ node {
             sh 'echo "Tests passed"'
         }
 
-        pipeline {
-            agent any
-            triggers {
-                cron('H 4/* 0 0 1-5')
-            }
-            stages {
-                stage('Schedule the job') {
-                    steps {
-                        echo 'Hello World'
-                    }
-                }
-            }
-        }
+        echo 'Hello World'
     }
 }
