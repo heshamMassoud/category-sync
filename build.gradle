@@ -105,6 +105,7 @@ pmd {
     toolVersion = pmdVersion
     ruleSetConfig = rootProject.resources.text.fromFile('config/pmd/pmd.xml')
     rulePriority = 2 // If a rule priority, with a level greater than or equal this number, is violated; the build should fail.
+    consoleOutput = true
 }
 
 jacoco {
@@ -125,7 +126,7 @@ jacocoTestReport {
     reports {
         xml.enabled = true
         xml.destination = "${buildDir}/reports/jacoco/report.xml"
-        html.enabled = true
+        html.enabled = false
         csv.enabled = false
     }
 }
@@ -136,9 +137,8 @@ findbugs {
 
 tasks.withType(FindBugs) {
     reports {
-        xml.enabled = false
-        html.enabled =  true
-        html.stylesheet = resources.text.fromFile('config/findbugs/findbugs-custom.xsl')
+        xml.enabled = true
+        html.enabled =  false
     }
 }
 
