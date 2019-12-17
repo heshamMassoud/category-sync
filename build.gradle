@@ -38,7 +38,7 @@ ext {
     mockitoVersion = '2.8.9'
     slf4jVersion = '1.7.25'
     jUnitVersion = '4.12'
-    assertjVersion = '3.6.1'
+    assertjVersion = '3.14.0'
     checkstyleVersion = '7.7'
     pmdVersion = '5.6.1'
     jacocoVersion = '0.7.9'
