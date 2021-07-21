@@ -36,7 +36,7 @@ jar {
 ext {
     commercetoolsJvmSdkVersion =  '1.20.0'
     mockitoVersion = '2.8.9'
-    slf4jVersion = '1.7.25'
+    slf4jVersion = '1.7.32'
     jUnitVersion = '4.12'
     assertjVersion = '3.6.1'
     checkstyleVersion = '7.7'
